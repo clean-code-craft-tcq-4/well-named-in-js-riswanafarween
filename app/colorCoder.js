@@ -19,6 +19,14 @@ function testPairToNumber(majorColor, minorColor, expectedPairNumber) {
             console.assert(pairNumber == expectedPairNumber);
 }
 
+function testAllColorCode() {
+    for (var pairNumber = 1; pairNumber <= 25; pairNumber++){
+        let testPair = getColorFromPairNumber(pairNumber);
+        console.log(`Pair Number: ${pairNumber},Colors:${testPair}`);
+        console.assert(pairNumber == getPairNumberFromColor(testPair));
+    }
+}
+
 function test() {
 
                testNumberToPair(4, "WHITE", "BROWN");
@@ -26,5 +34,6 @@ function test() {
                testNumberToPair(23, "VIOLET", "GREEN");
                testPairToNumber("YELLOW", "GREEN", 18);
                testPairToNumber("RED", "BLUE", 6);
+               testAllColorCode();
 }
 test();
